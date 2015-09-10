@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AllGistsTableViewController.h
 //  GistNotes
 //
 //  Created by Veaceslav Macarov on 08.09.15.
@@ -8,6 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface AllGistsTableViewController : UITableViewController
 @end
-

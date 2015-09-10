@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="GistEntity" representedClassName="GistEntity" syncable="YES">
+        <attribute name="avatarPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gistDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gistDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gistId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userLogin" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gistNote" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NoteEntity" inverseName="originalGist" inverseEntity="NoteEntity" syncable="YES"/>
+    </entity>
+    <entity name="NoteEntity" representedClassName="NoteEntity" syncable="YES">
+        <attribute name="avatarPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gistDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gistDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gistEdited" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="gistId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="noteText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userLogin" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="originalGist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GistEntity" inverseName="gistNote" inverseEntity="GistEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GistEntity" positionX="187" positionY="-0" width="128" height="133"/>
+        <element name="NoteEntity" positionX="-54" positionY="-9" width="128" height="163"/>
+    </elements>
 </model>
